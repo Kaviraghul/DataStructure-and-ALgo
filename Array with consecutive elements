@@ -1,0 +1,16 @@
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+        Collections.sort(A);
+
+
+        int test = 0;
+
+        for(int i = 0; i < A.size(); i++){
+            int temp = A.get(i) -A.get(0);
+            if(temp != test)return 0;
+            test++;
+        }
+
+        return 1;
+    }
+}
