@@ -1,0 +1,33 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public ArrayList<Integer> solve(final List<Integer> A, final List<Integer> B) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        int i = 0, j =0;
+        while(i<A.size() && j<B.size()){
+            if(A.get(i) < B.get(j)){
+                ans.add(A.get(i));
+                i++;
+            }else if(B.get(j) < A.get(i)){
+                ans.add(B.get(j));
+                j++;
+            }else{
+                ans.add(A.get(i));
+                ans.add(B.get(j));
+                i++;j++;
+            }
+        }
+        if(i<A.size()){
+            while(i<A.size()){
+                ans.add(A.get(i));
+                i++;
+            }
+        }
+        if(j<B.size()){
+            while(j<B.size()){
+                ans.add(B.get(j));
+                j++;
+            }
+        }
+        return ans;
+    }
+}
